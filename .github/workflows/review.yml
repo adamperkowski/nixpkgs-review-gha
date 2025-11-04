@@ -361,7 +361,7 @@ jobs:
           fi
           user_id="$(gh api /user --jq .id)"
           if [[ "$user_id" != "$PR_AUTHOR_ID" ]]; then
-            gh pr -R NixOS/nixpkgs review ${PR_NUMBER} --approve -b "Approved automatically following the successful run of \`nixpkgs-review\`."
+            gh pr -R NixOS/nixpkgs review ${PR_NUMBER} --approve -b "thanks"
           elif [[ "${{ inputs.on-success }}" = "approve" ]]; then
             echo "::error::You cannot approve your own pull request."
             exit 1
